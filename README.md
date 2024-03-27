@@ -1,5 +1,5 @@
 # API simulator
 
-## High level design overview
+### Overview
 
 ![Overview](developer-guide/diagrams/API-Simulator.png)
