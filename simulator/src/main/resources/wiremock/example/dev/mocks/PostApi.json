@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPattern": "/api/v1/post",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.message",
+          "equalTo": "Hi"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"message\":\"Hello World! This is a get API. Post method is used to create new resources.\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

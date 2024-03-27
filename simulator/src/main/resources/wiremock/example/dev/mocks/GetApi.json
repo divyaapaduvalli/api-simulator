@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/api/v1/get"
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"message\":\"Hello World! This is a get API. Get method is used to read an existing resource.\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

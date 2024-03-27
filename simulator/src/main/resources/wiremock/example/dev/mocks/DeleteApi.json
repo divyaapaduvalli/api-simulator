@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "DELETE",
+    "urlPattern": "/api/v1/delete",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.message",
+          "equalTo": "Hi"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"message\":\"Hello World! This is a delete API. Delete method is used to delete an existing resource.\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

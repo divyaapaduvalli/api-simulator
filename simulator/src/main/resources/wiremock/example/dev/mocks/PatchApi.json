@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "PATCH",
+    "urlPattern": "/api/v1/patch",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": {
+          "expression": "$.message",
+          "equalTo": "Hi"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"message\":\"Hello World! This is a put API. Put method is used to update properties of an existing resource.\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
