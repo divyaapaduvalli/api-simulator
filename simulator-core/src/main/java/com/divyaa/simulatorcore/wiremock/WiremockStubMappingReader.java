@@ -4,6 +4,8 @@ import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.common.ClasspathFileSource;
 import com.github.tomakehurst.wiremock.standalone.JsonFileMappingsSource;
 import com.github.tomakehurst.wiremock.stubbing.StubMapping;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class WiremockStubMappingReader {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(WiremockStubMappingReader.class);
     private static final String PATH_FORMAT = "%s/%s/%s";
     private static final String MOCKS_PATH_FORMAT = PATH_FORMAT + "/mocks";
     private final String filesClassPathRoot;
@@ -26,8 +29,8 @@ public class WiremockStubMappingReader {
 
     /**
      * Retrieves all the api mocks that are found under the resources/{application}/{environment}/mocks
-     * @param wiremockServerKey
-     * @return
+     * @param wiremockServerKey - A combination of application/environment, which is used to identify the wiremock server
+     * @return JsonFileMappingsSource
      */
     public JsonFileMappingsSource getMapping(WiremockServerKey wiremockServerKey){
         String filesClassPath = getFilesClassPath(wiremockServerKey);
@@ -37,11 +40,11 @@ public class WiremockStubMappingReader {
 
     /**
      * Prints the available api mocks of the given wiremock server
-     * @param wireMockServer
+     * @param wireMockServer - Instance of a wiremock server whose mocks needs to be printed
      */
     void printMappings(WireMockServer wireMockServer){
         for(StubMapping mapping : wireMockServer.listAllStubMappings().getMappings()){
-            System.out.println(mapping);
+            LOGGER.info("Loading all the mocks : {}", mapping);
         }
     }
 

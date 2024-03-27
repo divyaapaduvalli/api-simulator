@@ -1,2 +1,5 @@
+application:
+  endpoint: /wiremock/%s/%s/**
 wiremock:
   filesClassPath: wiremock
+  basePath: http://localhost:%s
