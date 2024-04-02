@@ -16,5 +16,19 @@ pipeline {
                 }
             }
         }
+        stage ('Verify code formatting') {
+            steps {
+                script {
+                    stageName = 'Verify code formatting'
+                    try {
+                        sh "git status"
+                        sh "git status | grep -c \'nothing to commit, working tree clean\'"
+                    } catch (err) {
+                        echo "Please run a \'mvn clean install\' locally and commit the changes!"
+                        throw err
+                    }
+                }
+            }
+        }
     }
 }
