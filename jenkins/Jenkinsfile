@@ -8,7 +8,7 @@ pipeline {
                 script {
                     stageName = 'Build with unit tests'
                     echo "Build maven artifact from ${env.BRANCH_NAME} branch."
-                    mvn "clean install"
+                    sh "mvn clean install"
                 }
             }
         }
