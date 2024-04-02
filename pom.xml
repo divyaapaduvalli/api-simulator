@@ -62,7 +62,6 @@
 				<configuration>
 					<verbose>true</verbose>
 					<filesNamePattern>.*\.java</filesNamePattern>
-					<skin>false</skin>
 					<skipSortingImports>false</skipSortingImports>
 					<style>google</style>
 				</configuration>
@@ -76,4 +75,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub divyaapaduvalli Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/divyaapaduvalli/my-artifacts</url>
+		</repository>
+	</distributionManagement>
 </project>
