@@ -40,8 +40,7 @@ public class ProxyController {
      * @throws IOException
      */
     @RequestMapping("/wiremock/{application}/{environment}/**")
-    public void routeMockRequest(WiremockServerKey wiremockServerKey, HttpServletRequest servletRequest,
-                                 HttpServletResponse servletResponse) throws ServletException, IOException {
+    public void routeMockRequest(WiremockServerKey wiremockServerKey, HttpServletRequest servletRequest, HttpServletResponse servletResponse) throws ServletException, IOException {
         wiremockService.registerWiremockInstance(wiremockServerKey);
         servletRequest.getRequestDispatcher(servletRequest.getRequestURI())
                 .forward(servletRequest, servletResponse);
