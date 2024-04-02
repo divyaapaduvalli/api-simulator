@@ -2,6 +2,10 @@ pipeline {
 
     agent any //the pipeline will run on any available jenkins agents. Jenkins agents are executor nodes (linux or windows)
 
+    tools {
+        maven 'Maven 3.9.6'
+    }
+
     stages {
         stage ('Build with unit tests') {
             steps {
