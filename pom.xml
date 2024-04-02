@@ -19,6 +19,7 @@
 		<spring-cloud.version>2020.0.0</spring-cloud.version>
 		<wiremock.version>2.27.2</wiremock.version>
 		<spring-cloud-starter-netflix-zuul.version>2.2.10.RELEASE</spring-cloud-starter-netflix-zuul.version>
+		<maven-java-formatter-plugin.version>0.4</maven-java-formatter-plugin.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -51,4 +52,19 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.googlecode.maven-java-formatter-plugin</groupId>
+				<artifactId>maven-java-formatter-plugin</artifactId>
+				<version>${maven-java-formatter-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>format-on-install</id>
+						<phase>none</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
