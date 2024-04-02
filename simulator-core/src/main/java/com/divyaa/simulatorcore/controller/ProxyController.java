@@ -2,14 +2,13 @@ package com.divyaa.simulatorcore.controller;
 
 import com.divyaa.simulatorcore.wiremock.WiremockServerKey;
 import com.divyaa.simulatorcore.wiremock.WiremockService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * All HTTP requests to this application will land on this controller. As we have one exposed

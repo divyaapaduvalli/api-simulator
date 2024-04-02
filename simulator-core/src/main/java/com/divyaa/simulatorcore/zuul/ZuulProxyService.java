@@ -1,13 +1,12 @@
 package com.divyaa.simulatorcore.zuul;
 
 import com.divyaa.simulatorcore.wiremock.WiremockServerKey;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
 import org.springframework.cloud.netflix.zuul.web.ZuulHandlerMapping;
 import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 /**
  * Provides the creation of Zuul routes that would be used by the application after the wiremock
