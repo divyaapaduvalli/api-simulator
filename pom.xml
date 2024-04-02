@@ -20,6 +20,7 @@
 		<wiremock.version>2.27.2</wiremock.version>
 		<spring-cloud-starter-netflix-zuul.version>2.2.10.RELEASE</spring-cloud-starter-netflix-zuul.version>
 		<maven-java-formatter-plugin.version>0.4</maven-java-formatter-plugin.version>
+		<fmt-maven-plugin.version>2.23</fmt-maven-plugin.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -55,13 +56,21 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.googlecode.maven-java-formatter-plugin</groupId>
-				<artifactId>maven-java-formatter-plugin</artifactId>
-				<version>${maven-java-formatter-plugin.version}</version>
+				<groupId>com.spotify.fmt</groupId>
+				<artifactId>fmt-maven-plugin</artifactId>
+				<version>${fmt-maven-plugin.version}</version>
+				<configuration>
+					<verbose>true</verbose>
+					<filesNamePattern>.*\.java</filesNamePattern>
+					<skin>false</skin>
+					<skipSortingImports>false</skipSortingImports>
+					<style>google</style>
+				</configuration>
 				<executions>
 					<execution>
-						<id>format-on-install</id>
-						<phase>none</phase>
+						<goals>
+							<goal>format</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
