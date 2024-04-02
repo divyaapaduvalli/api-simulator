@@ -8,8 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableSimulatorConfig
 public class SimulatorApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SimulatorApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(SimulatorApplication.class, args);
+  }
 }
