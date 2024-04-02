@@ -30,5 +30,14 @@ pipeline {
                 }
             }
         }
+        stage ('Publish artifact to Github maven repository') {
+            steps {
+                script {
+                    stageName = 'Publish artifact to Github maven repository'
+                    echo "Run maven deploy"
+                    sh "mvn deploy"
+                }
+            }
+        }
     }
 }
