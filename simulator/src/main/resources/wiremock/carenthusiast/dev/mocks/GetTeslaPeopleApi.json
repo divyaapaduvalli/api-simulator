@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/api/v1/car/brands/tesla/people"
+  },
+  "response": {
+    "status": 200,
+    "body": "[Carl, Maxim, Rich]",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

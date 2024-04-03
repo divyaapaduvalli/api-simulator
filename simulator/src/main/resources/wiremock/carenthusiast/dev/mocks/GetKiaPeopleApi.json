@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/api/v1/car/brands/kia/people"
+  },
+  "response": {
+    "status": 200,
+    "body": "[Carl, Divyaa]",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

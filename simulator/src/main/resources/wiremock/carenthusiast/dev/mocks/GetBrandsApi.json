@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/api/v1/car/brands"
+  },
+  "response": {
+    "status": 200,
+    "body": "[Tesla, Kia]",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
